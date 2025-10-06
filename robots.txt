@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://trustup24.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin-bereich/
+Disallow: /dashboard/
+Disallow: /api/
+
+# Disallow temporary or development pages
+Disallow: /test/
+Disallow: /dev/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow important pages
+Allow: /anbieter-finden
+Allow: /so-funktioniert-es
+Allow: /for-providers
+Allow: /visa
+Allow: /firmengruendung
+Allow: /agencies
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
