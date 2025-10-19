@@ -1,4 +1,0 @@
--- TRUSTUP24 PROVIDER DATA IMPORT
--- Generated: 2025-10-19T11:24:59.951Z
--- Source: GitHub CSV files
-
