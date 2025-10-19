@@ -1,0 +1,93 @@
+TRUSTUP24 SYSTEM ANALYSIS REPORT
+========================================
+
+FINDINGS:
+• Components in AGB-CUyV75nG.js: c
+• Components in AdminAlerts-B9zUSYtM.js: Q
+• API calls in AdminAlerts-B9zUSYtM.js: /api/auth/me
+• API calls in AdminAnalytics-cwqK2G7j.js: /api/auth/me
+• Components in AdminBenutzerverwaltung-gPLOuoxf.js: W
+• API calls in AdminBenutzerverwaltung-gPLOuoxf.js: /api/auth/me, /api/admin/users
+• Components in AdminBereich-jRBcMHMb.js: ae, he, s
+• API calls in AdminBereich-jRBcMHMb.js: /api/auth/me
+• Components in AdminDashboard-vH765fJL.js: _e, f
+• Components in AdminEinstellungen-frmzUzbs.js: K
+• API calls in AdminEinstellungen-frmzUzbs.js: /api/auth/me
+• Components in AdminMandateManagement-CmO6S4z8.js: te
+• Components in AdminNavbar-CFcbAGb8.js: G, H, J, N, Y, Z
+• API calls in AdminNavbar-CFcbAGb8.js: /api/admin/stats, /api/admin/alerts, /api/admin/system-health, /api/auth/me, /api/auth/logout
+• Components in AdminSystemHealth-D0NZ6Tub.js: ie
+• API calls in AdminSystemHealth-D0NZ6Tub.js: /api/auth/me
+• Components in AdminUsers-KHmb4RRo.js: G
+• API calls in AdminUsers-KHmb4RRo.js: /api/auth/me, /api/admin/users
+• Components in Agencies-DyhUoGy1.js: Ce
+• Components in AgencyCard-ChNQzgd9.js: F, H, O, t, z
+• Components in AgencyComparison-MGaDddSi.js: T
+• Components in AgencyDashboard-BDwEXT2Y.js: E
+• Components in AgencyDetail-zoUoaqzu.js: A, Bt, C, D, De, Ea, Fa, Gt, K, Ne, Qt, Rt, S, Te, U, Vt, We, Xe, Y, Yt, Ze, _a, aa, at, ea, et, jt, le, na, nt, oe, q, ta, tt, u, ve, w, we, ye, yt, zt
+• Form handling found in AgencyDetail-zoUoaqzu.js
+• Components in AgencyRegister-DOQuSinr.js: ae, ce, de, ie, le, te, we
+• Form handling found in AgencyRegister-DOQuSinr.js
+• Components in AnbieterBereich-BGh9zqi9.js: v
+• Components in AnbieterFinden-BeDT871k.js: Q
+• Components in AnbieterVergleich-Cd_362QL.js: Q
+• Components in AnbieterVergleichen-DwRtsXWs.js: qe
+• Components in BenutzerBereich-6B2LM5u6.js: C
+• API calls in BenutzerBereich-6B2LM5u6.js: /api/auth/me
+• Components in Blog-dHqtgg3q.js: z
+• Components in ClientDashboard-M12mkKkP.js: T
+• Components in ClientNavbar-DK9K465E.js: H
+• API calls in ClientNavbar-DK9K465E.js: /api/auth/me, /api/auth/logout
+• Form handling found in ClientNavbar-DK9K465E.js
+• Components in Contact-BLYp4WpZ.js: D
+• Form handling found in Contact-BLYp4WpZ.js
+• Components in CustomerDashboard-BKZ9CAs1.js: G
+• API calls in CustomerDashboard-BKZ9CAs1.js: /api/auth/me, /api/customer/orders, /api/customer/profile
+• Components in Datenschutz-DxRS1vd9.js: u
+• Components in DesignShowcase-C4xDtaAt.js: L
+• Components in DynamicServicePage-EwJPF6F8.js: D
+• Components in Favorites-CKtjdf8E.js: Z
+• Components in Firmengruendung-DRIWv4T3.js: j, p
+• Components in ForProviders-Ddkri-pV.js: A
+• Components in Impressum-B0TVM7Y6.js: c
+• Components in KostenRechner-1k3lNJeq.js: Q
+• Form handling found in KostenRechner-1k3lNJeq.js
+• Components in LoadingSpinner-B5NoQ5ss.js: w, x
+• Components in Login-CmBePKju.js: R
+• API calls in Login-CmBePKju.js: /api/auth/login
+• Form handling found in Login-CmBePKju.js
+• Components in Profile-Cts8zGs1.js: A
+• Components in ProgressTracker-BS4Fhnsn.js: B, D, E, I, M, O, Q, U, ae, at, b, be, f, fe, g, ge, i, k, m, n, o, p, pe, qe, s, se, ve, w, we, x, xe, y, ye
+• Components in ProviderDashboard-2vj4kv86.js: _
+• API calls in ProviderDashboard-2vj4kv86.js: /api/auth/me, /api/provider/products, /api/provider/orders, /api/auth/logout
+• Form handling found in ProviderDashboard-2vj4kv86.js
+• Components in ProviderRegister-DwE7ae9z.js: J, ee
+• Form handling found in ProviderRegister-DwE7ae9z.js
+• Components in Ratgeber-BylzGaVq.js: z
+• Components in Sitemap-vSI3h8-J.js: S
+• Components in SmartMatchingFunnel-AVPtwz8M.js: Fe, He, Je, Oe, Qe, Ze, g, qe, r, s, t, vs
+• API calls in SmartMatchingFunnel-AVPtwz8M.js: https://api.ipify.org?format=json, /api/leads
+• Components in SmartMatchingIframe-D750KSuk.js: y
+• Components in SmartMatchingStandalone-DT02BpMG.js: M
+• Components in SoFunktioniertEs-Dm-lbj6f.js: V
+• Components in SuperAdminDashboard-d1nMO1OC.js: W
+• API calls in SuperAdminDashboard-d1nMO1OC.js: /api/auth/me, /api/admin/all-users, /api/admin/email-drafts, /api/admin/platform-stats
+• Components in TrustMeter-CF9Jd7Qr.js: D, I, J, K, V, d, n, se, w
+• Components in TrustQualitaet-D9qKzxtK.js: T
+• Components in TrustScoreExplanation-W21HM86a.js: z
+• Components in Visa-B83nkaRc.js: O, je, vn
+• Components in VisaConsulting-mBPgcX19.js: A, As, Bi, Bs, Ci, Cs, D, Ds, Ei, Es, Fa, Fi, Fs, Ga, Gi, Gs, H, Ha, Hi, Hs, Is, J, Ja, Ji, Js, Ka, Ki, Ks, La, Li, Ls, Ma, Mi, Ml, Ms, Ni, Ns, Oa, Oi, Os, Pe, Ps, Qa, Qi, Qs, Ra, Ri, Rs, S, Si, Sl, Ss, Ts, Ua, Ui, Us, V, Vi, Vs, Wa, Wi, Ws, Xa, Xi, Xl, Xs, Ya, Yi, Ys, Za, Zi, Zs, _l, _s, a, al, as, bs, cl, cs, d, dl, ds, e, ea, ee, el, es, f, fl, fs, g, gl, gs, h, hl, hs, ia, ie, il, is, ji, js, ka, ki, ks, l, ll, ls, m, ml, ms, na, ne, nl, ns, o, ol, os, p, pl, ps, qa, qi, qs, r, ra, re, rl, rs, sa, sl, ss, t, ta, tl, ts, ul, us, v, vi, vl, vs, wi, wl, ws, x, xs, y, yl, ys, ze, zi, zs
+• Form handling found in VisaConsulting-mBPgcX19.js
+• Components in checkbox-BqsXHwac.js: B, C, J, N, Q, Z, ae, ce, ee, fe, ie, me, ne, oe, re, te, y
+• Components in index-wr2dCn2t.js: A0, A1, AC, AI, AM, AN, AP, A_, Aa, Ab, Ad, Ae, Af, Ah, Ai, Am, Ao, Av, Aw, Ax, Az, B1, BC, BD, BF, BO, BS, BT, BV, Ba, Bd, Bh, Bj, Bl, Bm, Bo, Bp, Bu, Bv, C1, CD, CF, CI, CO, CP, Ch, Cm, Cp, Cr, Cs, Cw, Cx, Cy, D1, DD, DF, DI, DO, DS, DT, DV, Dg, Dh, Di, Dr, Du, Dv, Dw, Dx, Dy, E, E1, E5, EF, EI, EP, Ea, Ef, Eh, Ei, Em, En, Es, Et, Ew, Ex, Ey, F1, F3, FA, FC, FD, FE, FF, FI, FO, FP, FS, FT, F_, Fb, Fh, Fj, Fo, Fp, Fv, Fw, Fx, G1, G_, Ga, Gc, Gn, Gs, Gv, Gx, Gy, H, H1, H4, HF, HI, HN, HO, HP, HR, HS, HT, HV, H_, Hb, Hi, Hl, Hv, Hx, I, I0, I1, I2, I3, ID, IM, IO, IS, IT, I_, Ig, Ij, Iu, Iv, Iw, J, JD, JF, JI, JN, JO, JR, JT, J_, Ja, Jd, Jf, Jh, Jm, Jr, Js, Jt, Jv, Jw, K1, K4, KI, KM, KN, Ka, Kl, Kn, Ku, Kv, Kx, L, L0, L1, LA, LD, LE, LF, LI, LL, LO, LP, LS, LT, L_, La, Lb, Ld, Lf, Lh, Li, Lj, Lm, Lo, Lp, Ls, Lv, Lw, M1, M5, MC, MD, MF, MI, MT, MV, Ma, Mb, Me, Mf, Mg, Mh, Mj, Ml, Mn, Mr, Mu, Mv, Mw, Mx, N1, N5, NI, NN, NP, Nb, Nc, Ne, Nm, Nn, No, Nu, Nw, Nx, O, O0, O1, O3, OD, OE, OF, OM, ON, OO, OS, OT, OV, Ob, Og, Oj, Ol, Om, Oo, Ou, Ow, P1, P3, P5, PC, PD, PE, PI, PO, PP, Pa, Pf, Ph, Pi, Pl, Pm, Pn, Pr, Pt, Pv, Px, Py, Q, Q1, QD, QF, QI, QM, QO, Q_, Qa, Qc, Qe, Qm, Qn, Qr, Qs, Qt, Qu, Qv, Qw, Qx, Qy, R1, RC, RD, RF, R_, Ra, Rb, Rg, Rh, Ri, Rj, Rn, Rt, Ru, Rv, Rw, Ry, S, S1, S2, SC, SF, SI, SO, SP, SR, ST, Sc, Sg, Sh, So, Sr, Ss, Su, Sv, Sx, Sy, Sz, T1, T2, T5, TC, TF, TI, TN, TO, TP, Tf, Th, Tm, Tp, Tw, Tx, Ty, Tz, U0, U1, U4, UC, UF, UI, UO, US, UT, U_, Ua, Ub, Ud, Ug, Uh, Ul, Up, Uv, Uw, Ux, V0, V1, VA, VD, VE, VF, VI, VL, VO, VS, VV, V_, Va, Vi, Vj, Vm, Vs, Vt, Vw, Vx, W1, W4, WF, WN, WO, WP, WT, WV, W_, Wa, Wb, Wc, Wi, Wl, Wp, Wu, Wv, Ww, Wx, X, XD, XI, XM, XN, XR, Xa, Xd, Xf, Xl, Xm, Xp, Xr, Xu, Xv, Xx, Xy, Y1, Y2, YE, YF, YI, YO, YR, Ya, Yf, Yh, Yj, Yl, Ym, Yn, Yt, Yu, Yv, Yw, Yx, Yy, Z, Z1, ZD, ZF, ZM, ZO, Z_, Zc, Zk, Zm, Zo, Zp, Zt, Zu, Zv, Zx, Zy, _, _1, _2, _C, _F, _I, _M, _N, _P, __vite__mapDeps, _g, _h, _l, _n, _o, _p, _s, _v, _x, _y, a, a0, aA, aC, aD, aF, ab, ad, af, ag, aj, al, an, ao, ap, as, ay, b, b1, b2, b3, bC, bD, bI, bM, bN, bP, bR, bT, ba, bf, bg, bh, bi, bl, bo, bp, bv, bx, bz, cI, cM, cS, cb, cf, ch, cm, co, cr, cu, cy, d, d2, dC, dF, dI, dL, dM, dO, dP, da, db, dc, de, df, dh, dm, dn, ds, dx, dy, e0, e1, e2, eA, eC, eD, eF, eI, eL, eO, eP, e_, ea, ef, eg, eh, ei, ej, el, en, ex, ey, f, f1, f2, fA, fC, fF, fI, fL, fM, fO, fP, fe, fm, fs, ft, fy, g, g1, g2, g4, gC, gD, gI, gL, gN, gP, gS, gc, gd, gf, gg, gh, gl, gm, gp, gr, gs, gu, gv, gw, gx, h, h0, h1, hA, hC, hD, hL, hM, hO, hP, hb, hc, hf, hm, hn, hs, ht, hu, hw, hy, i, i1, iA, iD, iF, iL, iN, iP, ib, ij, il, im, io, ip, it, iy, j1, j2, j3, j5, jC, jF, jI, jO, jP, j_, je, jf, jm, jn, jo, js, jt, ju, jw, jx, jy, k1, k2, kC, kF, kI, kO, kP, ka, kf, kg, kh, kk, kl, km, kn, ku, kw, kx, ky, l, l0, l5, lF, lL, lO, lT, lb, ld, lf, li, ll, lm, lr, lu, ly, m, m0, m1, m2, m4, mD, mF, mI, mN, m_, mb, mc, md, mi, mm, mn, mo, mr, ms, mu, mv, mx, my, n, n0, n5, nA, nC, nF, nL, nb, nh, ni, nj, nl, ns, nu, nv, ny, o, o0, o2, oI, ob, od, of, oj, ol, om, oo, op, os, p1, p2, p4, pC, pD, pI, pL, pM, pN, pP, p_, pa, pb, pd, pi, pl, pm, po, ps, pu, pv, pw, px, py, q1, qF, qI, qN, qO, qT, q_, qb, qc, qg, ql, qm, qo, qp, qr, qs, qu, qv, qw, qx, qy, r, r0, r1, rA, rC, rF, rI, rL, rO, rP, rT, rb, rh, rl, rm, rn, ry, s, s1, sA, sC, sF, sL, sP, sb, sc, se, sf, sg, sh, sj, sl, sm, sw, sy, t, t0, t1, t2, t5, tA, tC, tL, tb, tc, td, te, th, ti, tj, tl, tm, tn, ts, tu, tx, ty, u, u0, uC, uL, uM, uO, ub, ue, uf, um, un, uo, us, ut, uu, uw, ux, uy, v, v0, v1, v2, vA, vL, vN, vO, vP, vS, vb, vm, vr, vu, vv, vx, w, w2, w3, wA, wC, wF, wI, wN, wO, wP, wT, wd, wf, wg, wh, wj, wm, wo, wp, wr, ws, wu, wx, x, x1, x2, xA, xC, xD, xF, xI, xO, xP, xT, xa, xc, xd, xg, xk, xm, xn, xr, xv, y, y0, y1, y2, yA, yC, yF, yL, yO, ya, yc, ye, yg, ym, yo, yr, yv, z0, z1, zC, zD, zE, zF, zM, zO, zS, zV, zc, ze, zh, zi, zj, zl, zm, zo, zs, zt, zu, zv
+• API calls in index-wr2dCn2t.js: /api/auth/me, /api/newsletter/subscribe, /api/auth/me
+• Form handling found in index-wr2dCn2t.js
+• Components in progress-VWsPe6Ar.js: A, F, I, T, V, W, _, b, g, p, x
+• Components in radio-group-DftW-MrN.js: Ae, Be, Fe, He, Ke, L, M, Me, Se, Te, Ve, Ye, Z, g, he, qe, re, xe
+• Components in select-yyTeqUwY.js: Ne, Zt, et, m, nt, ot, s
+• Components in tabs-ChsUPS6B.js: A, E
+• Components in ux-improvements.js: addMatchingSuccessPopup, addSmoothScrolling, attachScrollFix, createProviderComparisonPage, fixMatchingToolScroll, handleWeiterClick, improveMobileTouchTargets, improveTrustScore, initUXImprovements, loadLiveProviderData, loadProviderComparison, loadProviderCountFromCSV, preventScrollToTop, updateProviderCountElements, updateProviderCounts, updateTrustScore, waitForReactApp
+• API calls in ux-improvements.js: https://raw.githubusercontent.com/Minhaus-Consulting/trustup24-data/main/provider-count.json
+
+ISSUES (1):
+• ❌ No Supabase configuration found
