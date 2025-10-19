@@ -1,0 +1,11 @@
+{
+  "total_providers": 526,
+  "data_sources": 3,
+  "categories": 13,
+  "services": 18,
+  "avg_trust_score": 81,
+  "verified_providers": 153,
+  "featured_providers": 178,
+  "generated_at": "2025-10-19T11:38:36.260Z",
+  "sql_file": "/home/ubuntu/trustup24-frontend/real-provider-import.sql"
+}
