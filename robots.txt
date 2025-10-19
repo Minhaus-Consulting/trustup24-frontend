@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://trustup24.com/sitemap.xml
+Sitemap: https://trustup24.ae/sitemap.xml
 
 # Disallow admin areas
 Disallow: /admin-bereich/
