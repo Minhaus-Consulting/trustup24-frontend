@@ -255,9 +255,13 @@ const injectProviderData = () => {
 
   // Update provider counts
   const updateCounts = () => {
-    // Update total provider count
+    // Update total provider count from 0 to 526
     const countElements = document.querySelectorAll('*');
     countElements.forEach(el => {
+      if (el.textContent && el.textContent.match(/^\s*0\s+gefunden\s*$/)) {
+        el.textContent = `${REAL_PROVIDER_DATA.totalProviders} gefunden`;
+        console.log('✅ Updated provider count from "0 gefunden" to', `${REAL_PROVIDER_DATA.totalProviders} gefunden`);
+      }
       if (el.textContent && el.textContent.match(/^\s*52\s*$/)) {
         el.textContent = REAL_PROVIDER_DATA.totalProviders;
         console.log('✅ Updated provider count from 52 to', REAL_PROVIDER_DATA.totalProviders);
@@ -284,15 +288,24 @@ const injectProviderData = () => {
 
   // Create provider list
   const createProviderList = () => {
-    // Find a suitable container or create one
-    let container = document.querySelector('main') || document.querySelector('.main-content') || document.body;
+    // Find the "Keine Anbieter gefunden" section specifically
+    const noProvidersElements = document.querySelectorAll('*');
+    let noProvidersContainer = null;
+    
+    for (let el of noProvidersElements) {
+      if (el.textContent && el.textContent.includes('Keine Anbieter gefunden')) {
+        noProvidersContainer = el.closest('div') || el.parentElement;
+        console.log('✅ Found "Keine Anbieter gefunden" container:', noProvidersContainer);
+        break;
+      }
+    }
     
     // Check if we're on the anbieter-vergleichen page
     const isProviderPage = window.location.pathname.includes('anbieter-vergleichen') || 
                           document.title.includes('Anbieter Vergleichen');
 
-    if (isProviderPage) {
-      // Create provider list section
+    if (isProviderPage && noProvidersContainer) {
+      // Replace the "Keine Anbieter gefunden" section with real providers
       const providerListHTML = `
         <div id="real-provider-list" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
           <div style="text-align: center; margin-bottom: 40px;">
@@ -344,14 +357,14 @@ const injectProviderData = () => {
         </div>
       `;
 
-      // Insert the provider list
+      // Replace the "Keine Anbieter gefunden" section
       const existingList = document.getElementById('real-provider-list');
       if (existingList) {
         existingList.remove();
       }
 
-      container.insertAdjacentHTML('beforeend', providerListHTML);
-      console.log('✅ Provider list injected with', ALL_DISPLAY_PROVIDERS.length, 'providers displayed');
+      noProvidersContainer.innerHTML = providerListHTML;
+      console.log('✅ Replaced "Keine Anbieter gefunden" with', ALL_DISPLAY_PROVIDERS.length, 'providers displayed');
     }
   };
 
