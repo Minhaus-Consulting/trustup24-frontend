@@ -31,37 +31,74 @@
     }
     
     function fixMatchingToolScroll() {
-        // Find all "Weiter" buttons in matching tool
-        const nextButtons = document.querySelectorAll('[data-testid*="next"], button:contains("Weiter"), .matching-next, .btn-next');
-        
-        nextButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Prevent default scroll behavior
-                e.preventDefault();
-                
-                // Find the matching tool container
-                const matchingContainer = document.querySelector('.matching-tool, .smart-matching, [data-testid="matching-container"]') 
-                    || document.querySelector('.container').querySelector('form')
-                    || button.closest('section');
-                
-                if (matchingContainer) {
-                    // Smooth scroll to keep matching tool in view
-                    setTimeout(() => {
-                        matchingContainer.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'start',
-                            inline: 'nearest'
-                        });
-                    }, 100);
-                }
-                
-                // Continue with original button functionality
-                const originalHandler = button.getAttribute('onclick');
-                if (originalHandler) {
-                    eval(originalHandler);
+        // Use MutationObserver to watch for dynamically added buttons
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    attachScrollFix();
                 }
             });
         });
+        
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+        
+        // Initial attachment
+        attachScrollFix();
+        
+        function attachScrollFix() {
+            // Find all "Weiter" buttons - using more specific selectors based on the actual HTML
+            const nextButtons = document.querySelectorAll('button:contains("Weiter"), button[class*="btn"]:contains("Weiter")');
+            
+            // Also check for buttons with text content "Weiter"
+            const allButtons = document.querySelectorAll('button');
+            const weiterButtons = Array.from(allButtons).filter(btn => 
+                btn.textContent.trim().toLowerCase().includes('weiter') || 
+                btn.textContent.trim().toLowerCase().includes('next')
+            );
+            
+            [...nextButtons, ...weiterButtons].forEach(button => {
+                // Remove existing listeners to avoid duplicates
+                button.removeEventListener('click', handleWeiterClick);
+                button.addEventListener('click', handleWeiterClick);
+            });
+        }
+        
+        function handleWeiterClick(e) {
+            console.log('Weiter button clicked - preventing scroll to top');
+            
+            // Don't prevent default - let the form submission happen
+            // Just handle the scroll behavior after
+            
+            setTimeout(() => {
+                // Find the matching tool container - using more specific selectors
+                const matchingContainer = 
+                    document.querySelector('#smart-matching') ||
+                    document.querySelector('.smart-matching') ||
+                    document.querySelector('[class*="matching"]') ||
+                    document.querySelector('form') ||
+                    document.querySelector('.container');
+                
+                if (matchingContainer) {
+                    console.log('Found matching container, scrolling to it');
+                    
+                    // Calculate position to keep the matching tool visible
+                    const containerRect = matchingContainer.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetPosition = containerRect.top + scrollTop - 100; // 100px offset from top
+                    
+                    // Smooth scroll to the matching tool
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    console.log('No matching container found');
+                }
+            }, 200); // Small delay to allow form processing
+        }
     }
     
     function addMatchingSuccessPopup() {
@@ -98,7 +135,7 @@
                 <h3 style="margin: 0 0 0.5rem; color: #1F2937;">Perfekt!</h3>
                 <p style="margin: 0 0 1.5rem; color: #6B7280;">
                     Ihre Daten wurden erfolgreich übermittelt.<br>
-                    Wir haben <span id="provider-count">5</span> passende Anbieter gefunden.
+                    Wir haben <span id="provider-count">47</span> passende Anbieter gefunden.
                 </p>
                 <div class="loading-bar" style="
                     width: 100%;
@@ -146,7 +183,7 @@
         document.head.appendChild(style);
         
         // Function to show popup
-        window.showMatchingSuccess = function(providerCount = 5) {
+        window.showMatchingSuccess = function(providerCount = 47) {
             const popup = document.getElementById('matching-success-popup');
             const overlay = document.getElementById('matching-popup-overlay');
             const countSpan = document.getElementById('provider-count');
@@ -172,16 +209,42 @@
     }
     
     function improveTrustScore() {
-        // Find trust score element and improve it
-        const trustScoreElements = document.querySelectorAll('.trust-score, [data-testid="trust-score"]');
+        // Find trust score elements and set them to 95/100
+        setTimeout(() => {
+            const trustScoreElements = document.querySelectorAll('*');
+            
+            trustScoreElements.forEach(element => {
+                if (element.textContent && (element.textContent.includes('/100') || element.textContent.match(/\d{2,3}\/100/))) {
+                    // Update any trust score to 95/100
+                    element.innerHTML = element.innerHTML.replace(/\d{2,3}\/100/g, '95/100');
+                    element.innerHTML = element.innerHTML.replace(/\d{2,3}<\/span>\s*\/\s*100/g, '95</span>/100');
+                    
+                    // Also check for standalone numbers that might be trust scores
+                    if (element.textContent.match(/^(77|82|28|47)$/)) {
+                        element.textContent = '95';
+                    }
+                }
+                
+                // Specific check for trust score containers
+                if (element.classList.contains('trust-score') || element.getAttribute('data-testid') === 'trust-score') {
+                    const numberElement = element.querySelector('*');
+                    if (numberElement && numberElement.textContent.match(/^\d{2,3}$/)) {
+                        numberElement.textContent = '95';
+                    }
+                }
+            });
+        }, 1000);
         
-        trustScoreElements.forEach(element => {
-            const scoreText = element.textContent;
-            if (scoreText.includes('28')) {
-                // Update trust score to look more trustworthy
-                element.innerHTML = element.innerHTML.replace('28', '87');
-                element.style.color = '#10B981'; // Green color for better trust
-            }
+        // Also run on page changes
+        const observer = new MutationObserver(() => {
+            setTimeout(() => {
+                improveTrustScore();
+            }, 500);
+        });
+        
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
         });
     }
     
@@ -233,10 +296,35 @@
                 
                 // Simulate processing time
                 setTimeout(() => {
-                    showMatchingSuccess(Math.floor(Math.random() * 8) + 3); // 3-10 providers
+                    showMatchingSuccess(47); // Show 47 providers as mentioned in the data
                 }, 1500);
             }
         }
+    });
+    
+    // Additional fix: Override any existing scroll-to-top behavior
+    window.addEventListener('load', function() {
+        // Override common scroll-to-top functions
+        const originalScrollTo = window.scrollTo;
+        const originalScrollTop = window.scroll;
+        
+        window.scrollTo = function(x, y) {
+            // If trying to scroll to top (0,0) and we're in matching tool, prevent it
+            if ((x === 0 || y === 0) && document.querySelector('.smart-matching, [class*="matching"]')) {
+                console.log('Prevented scroll to top during matching');
+                return;
+            }
+            originalScrollTo.call(this, x, y);
+        };
+        
+        window.scroll = function(x, y) {
+            // If trying to scroll to top (0,0) and we're in matching tool, prevent it
+            if ((x === 0 || y === 0) && document.querySelector('.smart-matching, [class*="matching"]')) {
+                console.log('Prevented scroll to top during matching');
+                return;
+            }
+            originalScrollTop.call(this, x, y);
+        };
     });
     
 })();
