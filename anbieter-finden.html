@@ -32,12 +32,6 @@
     
     <title>Anbieter finden - TrustedSetup24</title>
     
-    <!-- Redirect to main page with anchor -->
-    <script>
-      // Redirect to main page and scroll to matching tool
-      window.location.href = '/#smart-matching';
-    </script>
-    
     <style>
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -112,13 +106,42 @@
   </head>
   <body>
     <div class="redirect-message">
-      <h1>Weiterleitung...</h1>
+      <h1>Weiterleitung zum Smart Matching...</h1>
       <div class="spinner"></div>
-      <p>Sie werden zum Smart Matching Tool weitergeleitet.</p>
+      <p>Sie werden automatisch zum intelligenten Anbieter-Matching weitergeleitet.</p>
       
       <div class="backup-link">
-        <a href="/#smart-matching">Direkt zum Matching Tool</a>
+        <a href="/" id="redirectLink">Direkt zum Matching Tool</a>
       </div>
     </div>
+    
+    <script>
+      // Redirect to main page and scroll to matching tool
+      setTimeout(() => {
+        window.location.href = '/';
+        
+        // After redirect, scroll to matching tool
+        setTimeout(() => {
+          const matchingSection = document.querySelector('[class*="smart-matching"], [class*="matching"]');
+          if (matchingSection) {
+            matchingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 1000);
+      }, 2000);
+      
+      // Update backup link to trigger matching tool
+      document.getElementById('redirectLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = '/';
+        
+        setTimeout(() => {
+          // Try to find and click the matching tool button
+          const matchingButton = document.querySelector('button:contains("SMART MATCHING"), button:contains("Anbieter finden")');
+          if (matchingButton) {
+            matchingButton.click();
+          }
+        }, 1500);
+      });
+    </script>
   </body>
 </html>
